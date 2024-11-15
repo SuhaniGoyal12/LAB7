@@ -1,0 +1,51 @@
+public class ComplexNumber {
+    private double real;
+    private double imaginary;
+
+    // Constructor to initialize the complex number
+    public ComplexNumber(double real, double imaginary) {
+        this.real = real;
+        this.imaginary = imaginary;
+    }
+
+    // Method to add another ComplexNumber object and return the result
+    public ComplexNumber add(ComplexNumber c) {
+        double newReal = this.real + c.real;
+        double newImaginary = this.imaginary + c.imaginary;
+        return new ComplexNumber(newReal, newImaginary);
+    }
+
+    // Method to calculate the magnitude of the complex number
+    public double magnitude() {
+        return Math.sqrt(real * real + imaginary * imaginary);
+    }
+
+    // Method to display the complex number
+    public void display() {
+        System.out.println(real + " + " + imaginary + "i");
+    }
+
+    // Main method to test the class
+    public static void main(String[] args) {
+        // Creating two ComplexNumber objects
+        ComplexNumber c1 = new ComplexNumber(3, 4);
+        ComplexNumber c2 = new ComplexNumber(1, 2);
+
+        // Adding c1 and c2
+        ComplexNumber sum = c1.add(c2);
+
+        // Displaying the results
+        System.out.print("First Complex Number: ");
+        c1.display();
+        System.out.print("Second Complex Number: ");
+        c2.display();
+        System.out.print("Sum: ");
+        sum.display();
+
+        // Displaying the magnitudes
+        System.out.println("Magnitude of the first complex number: " + c1.magnitude());
+        System.out.println("Magnitude of the second complex number: " + c2.magnitude());
+        System.out.println("Magnitude of the sum: " + sum.magnitude());
+    }
+}
+
